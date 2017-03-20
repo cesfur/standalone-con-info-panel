@@ -1,0 +1,5 @@
+#Text uses UTF-8. Line starting with # is ignored. Empty lines are ignored.
+#One messsage per line. Maximum is 10 messages.
+Welcome at Con 2016.
+Please, register first.
+Find more details in con-book.

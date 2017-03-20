@@ -1,0 +1,19 @@
+h1 {
+    font-family: 'Medieval Sharp', sans-serif;
+    font-size: 140%;
+    margin-top: 0.5cm;
+    margin-bottom: 0.3cm;
+}
+
+p {
+    margin-top: 0.5cm;
+    margin-bottom: 0cm;
+}
+
+ul, ol {
+    margin-top: 0cm;
+    margin-bottom: 0cm;
+}
+    ul > li, ol > li {
+        margin-left: 1cm;
+    }

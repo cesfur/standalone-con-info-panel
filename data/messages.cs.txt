@@ -1,0 +1,5 @@
+#Text je v UTF-8. Řádek začínající # je ignorován. Prázdné řádky jsou ignorovány.
+#Jedna zpráva na řádek. Maximum je 10 zpráv.
+Vítejte na Conu 2016.
+Nezapomeňte se zaregistrovat.
+Nahlédněte do conbooku.

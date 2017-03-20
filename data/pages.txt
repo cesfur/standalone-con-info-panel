@@ -1,0 +1,5 @@
+#Text je v UTF-8. Øádek zaèínající # je ignorován. Prázdné øádky jsou ignorovány.
+#Stranky
+program
+photos
+#page

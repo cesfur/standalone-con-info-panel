@@ -1,0 +1,179 @@
+body div.content {
+    padding: 0;
+}
+
+#eventInfo {
+    display: inline-block;
+    width: 60vw;
+    height: 100vh;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding-top: 4mm;
+    padding-bottom: 4mm;
+    padding-left: 10mm;
+    padding-right: 8mm;
+    box-sizing: border-box;
+}
+    #eventInfo > div {
+        height: calc(50vh - 4mm);
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+        #eventInfo > div:first-of-type {
+            padding-bottom: 4mm;
+        }
+
+    #eventInfo h1 {
+        margin: 0;
+    }
+    #eventInfo p {
+        margin: 0;
+        margin-top: 0.2cm;
+    }
+
+#eventList {
+    display: inline-block;
+    width: 40vw;
+    vertical-align: top;
+}
+
+.event {
+    white-space: nowrap;
+    margin-top: 2mm;
+    margin-bottom: 2mm;
+    padding-top: 1mm;
+    padding-bottom: 1mm;
+    padding-left: 2mm;
+    padding-right: 2mm;
+}
+    .event:first-child {
+        margin-top: 0mm; 
+
+    }
+    .event:last-child {
+        margin-bottom: 0mm;
+    }
+    .event:before {
+        display: inline-block;
+        height: 2cm;
+        content: '';
+        vertical-align: middle;
+    }
+    .event > div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .event .time {
+        width: 2.8cm;
+        text-align: right;
+        font-size: 1cm;
+        line-height: 1cm;
+        margin-right: 0.4cm;
+    }
+    .event .name {
+        width: calc(100% - 3.2cm - 2cm);
+        font-family: 'Medieval Sharp', sans-serif;
+        font-weight: bold;
+    }
+        .event .name > div {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 0.7cm;
+            vertical-align: middle;
+            overflow: hidden;
+        }
+            .event .name > div:before {
+                display: inline-block;
+                height: 0.8cm;
+                content: '';
+                vertical-align: middle;
+            }
+    .event .location {
+        width: 1.8cm;
+        height: 1.8cm;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        margin: 1mm;
+    }
+
+.event.noEvent {
+    display: none;
+}
+
+
+.selected {
+    background-color: #dbd1ca;
+}
+
+.artshow.selected,
+.hlavni_sal.selected,
+.fursuit_lounge.selected {
+    background-color: #fdecab;
+}
+.artshow .location {
+    background-image: url(location-artshow.png);
+}
+.hlavni_sal .location {
+    background-image: url(location-hlavni_sal.png);
+}
+.fursuit_lounge .location {
+    background-image: url(location-fursuit_lounge.png);
+}
+
+.photoshoot.selected,
+.cajovna.selected {
+    background-color: #c0e3ab;
+}
+.photoshoot .location {
+    background-image: url(location-photoshoot.png);
+}
+.cajovna .location {
+    background-image: url(location-cajovna.png);
+}
+
+.sig_room.selected {
+    background-color: #f0ccfa;
+}
+.sig_room .location {
+    background-image: url(location-sig_room.png);
+}
+
+.dealers_den.selected {
+    background-color: #c0eefa;
+}
+.dealers_den .location {
+    background-image: url(location-dealers_den.png);
+}
+
+.restaurace.selected,
+.terasa.selected {
+    background-color: #e0e0fd;
+}
+.restaurace .location {
+    background-image: url(location-restaurace.png);
+}
+.terasa .location {
+    background-image: url(location-terasa.png);
+}
+
+.ohniste.selected,
+.louka.selected,
+.lobby.selected,
+.jinde_uvnitr.selected,
+.jinde_venku.selected {
+    background-color: #e3bea7;
+}
+.ohniste .location {
+    background-image: url(location-ohniste.png);
+}
+.louka .location {
+    background-image: url(location-louka.png);
+}
+.jinde_venku .location {
+    background-image: url(location-venku.png);
+}
+.lobby .location,
+.jinde_uvnitr .location {
+    background-image: url(location-uvnitr.png);
+}

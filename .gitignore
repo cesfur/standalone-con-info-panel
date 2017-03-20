@@ -1,0 +1,12 @@
+/tmp
+
+/logs
+
+/css/gfx
+
+/data/photos/converted
+/data/photos/im
+/data/photos/input
+/data/events.*.json
+
+/nbproject/private
