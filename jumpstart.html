@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ČeSFuR TV Jumpstarter</title>
+</head>
+<body>
+    <h1>ČeSFuR TV Jumpstarter</h1>
+    <p>Waiting for internet connection to <code id="config"></code> <span id="dots"></span></p>
+    <script>
+        /* Cesfur jumpstart script
+         *
+         * Takes a GET parameter from the URL called "config", tries to fetch
+         * the contents of this URL and on success, redirects to whatever URL
+         * it found in the contents.
+         *
+         * This is meant as a script that can be auto started by the operating
+         * system in a browser that waits until internet connection is available
+         * before redirecting - thus, the provided URL should only be available
+         * as soon as the target is.
+         */
+
+        // DECLARATIONS
+
+        // http://stackoverflow.com/a/11582513
+        function getURLParameter(name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+        }
+
+        // https://www.kirupa.com/html5/check_if_internet_connection_exists_in_javascript.htm
+        function doesConnectionExist(url, onSuccess, onFailure) {
+            var xhr = new XMLHttpRequest();
+            var randomNum = Math.round(Math.random() * 10000);
+
+            console.debug('Probing', url);
+            xhr.open('GET', url + "?rand=" + randomNum, true);
+            xhr.send();
+
+            xhr.addEventListener("readystatechange", processRequest, false);
+
+            function processRequest(e) {
+              console.debug('ReadyState', xhr.readyState);
+              if (xhr.readyState == 4) {
+                console.debug('status', xhr.status);
+                if (xhr.status >= 200 && xhr.status < 304) {
+                  onSuccess(xhr.responseText);
+                } else {
+                  onFailure();
+                }
+              }
+            }
+        };
+
+        function start(destination) {
+            window.location = destination;
+        };
+
+        function notAvailable() {
+            dots.innerHTML += '.';
+            setTimeout(checkConn, 500);
+        };
+
+        function checkConn() {
+            doesConnectionExist(jumpstart_url, start, notAvailable);
+        };
+
+        // MAIN
+        var jumpstart_url = getURLParameter('config');
+        var dots = document.getElementById('dots');
+        var config = document.getElementById('config');
+
+        if (!jumpstart_url) {
+            alert('You have to pass a config URL via "?config=<url>" URL parameter!');
+        } else {
+            config.innerHTML = jumpstart_url;
+
+            // act as if not available for starting the process
+            notAvailable();
+        }
+    </script>
+</body>
+</html>
